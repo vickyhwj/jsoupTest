@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Title Page</title>
+
+
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/tools.js"></script>
+	<style>
+		.btn.btn-primary {
+			width: 100%;
+		}
+
+		td,
+		th {
+			vertical-align: middle;
+			text-align: center;
+			border: 1px solid black;
+		}
+
+		table {
+			border: 1px solid black;
+		}
+
+		#table_sum {
+			display: none;
+		}
+
+		.right>div {
+			overflow: hidden;
+		}
+
+		.right>div>div {
+			overflow-x: scroll;
+		}
+	</style>
+
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-2 left">
+				<select name="" id="seasonName" class="form-control" required="required">
+						<option value="11-12">11-12</option>
+						<option value="12-13">12-13</option>
+						<option value="13-14">13-14</option>
+						<option value="14-15">14-15</option>
+						<option value="15-16">15-16</option>
+						<option value="16-17">16-17</option>
+					</select>
+				<select name="" id="teamName" class="form-control" required="required">
+						
+				</select>
+
+
+				<button type="submit" class="btn btn-primary" id="sub">Submit</button>
+
+
+				<script>
+					var teams = [
+						"勇士",
+						"小牛",
+						"奇才",
+						"雷霆",
+						"篮网",
+						"魔术",
+						"森林狼",
+						"爵士",
+						"火箭",
+						"凯尔特人",
+						"鹈鹕",
+						"热火",
+						"快船",
+						"黄蜂",
+						"76人",
+						"开拓者",
+						"猛龙",
+						"掘金",
+						"雄鹿",
+						"尼克斯",
+						"老鹰",
+						"马刺",
+						"骑士",
+						"太阳",
+						"灰熊",
+						"国王",
+						"湖人",
+						"活塞",
+						"超音速",
+						"山猫",
+						"步行者",
+						"公牛"
+					];
+					for (var i = 0; i < teams.length; ++i)
+						$("#teamName").append('<option value="' + teams[i] + '">' + teams[i] + '</option>')
+				</script>
+			</div>
+			<div class="col-sm-10 right">
+
+				<div class="btn-group">
+					<button type="button" class="btn btn-default active" id="bu_pre">场均</button>
+					<button type="button" class="btn btn-default" id="bu_sum">总计</button>
+
+				</div>
+				<div>
+					<div>
+						<table class="table table-hover" id="table_pre">
+							<thead>
+								<tr>
+									<th>姓名</th>
+									<th>出场</th>
+									<th>首发</th>
+									<th>时间</th>
+									<th>投篮</th>
+									<th>三分</th>
+									<th>罚球</th>
+									<th>前篮板</th>
+									<th>后篮板</th>
+									<th>总篮板</th>
+									<th>助攻</th>
+									<th>抢断</th>
+									<th>盖帽</th>
+									<th>失误</th>
+									<th>犯规</th>
+									<th>得分</th>
+								</tr>
+							</thead>
+							<tbody id="seasonPres">
+
+							</tbody>
+						</table>
+						<table class="table table-hover" id="table_sum">
+							<thead>
+								<tr>
+									<th>姓名</th>
+									<th>出场</th>
+									<th>首发</th>
+									<th>时间</th>
+									<th>投篮</th>
+									<th>三分</th>
+									<th>罚球</th>
+									<th>前篮板</th>
+									<th>后篮板</th>
+									<th>总篮板</th>
+									<th>助攻</th>
+									<th>抢断</th>
+									<th>盖帽</th>
+									<th>失误</th>
+									<th>犯规</th>
+									<th>得分</th>
+								</tr>
+							</thead>
+							<tbody id="seasonSums">
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	
+
+</body>
+
+</html>
+
+
+<script src="js/season_team.js"></script>
